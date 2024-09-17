@@ -1,36 +1,61 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "hero_sdc": {
-            "type": "hero_sdc"
-        },
-        "benefits": {
-            "type": "benefits"
-        },
-        "category": {
-            "type": "category"
-        },
-        "our_story": {
-            "type": "our_story"
-        },
-        "testimonials": {
-            "type": "testimonials"
-        },
-        "social_media": {
-            "type": "social_media"
-        },
-        "instafeed": {
-            "type": "instafeed"
-        }
+  "sections": {
+    "hero_sdc": {
+      "type": "hero_sdc",
+      "settings": {
+      }
     },
-    "layout": "theme",
-    "wrapper": "main.main-wrapper",
-    "order": [
-        "hero_sdc",
-        "benefits",
-        "category",
-        "our_story",
-        "testimonials",
-        "social_media",
-        "instafeed"
-    ]
+    "benefits": {
+      "type": "benefits",
+      "settings": {
+      }
+    },
+    "category": {
+      "type": "category",
+      "settings": {
+        "collection_collection": "frontpage",
+        "collection_collection_limit": 6
+      }
+    },
+    "our_story": {
+      "type": "our_story",
+      "settings": {
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+      }
+    },
+    "social_media": {
+      "type": "social_media",
+      "settings": {
+      }
+    },
+    "instafeed": {
+      "type": "instafeed",
+      "settings": {
+      }
+    }
+  },
+  "layout": "theme",
+  "wrapper": "main.main-wrapper",
+  "order": [
+    "hero_sdc",
+    "benefits",
+    "category",
+    "our_story",
+    "testimonials",
+    "social_media",
+    "instafeed"
+  ]
 }
