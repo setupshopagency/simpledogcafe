@@ -1,0 +1,16 @@
+<div class="product-container"><div class="product_component"><div class="product_list-wrapper w-dyn-list"><div role="list" class="product_list w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
+<div role="listitem" class="product_list-item w-dyn-item">
+    
+    {% render 'product_item', product: product %}
+
+    
+</div>
+{% endfor %}
+</div><div class="hide w-dyn-empty"><div>No items found.</div></div></div></div><div class="see-how-it-works"><div class="w-layout-vflex block_how-it-works"><div class="item_how-it-works"><img src="{{ 'img_pick-your-protiens.png' | asset_url }}" loading="lazy" width="143.5" alt="" class="img_how-it-works">
+<div class="txt_how-it-works-label">Pick your protein</div></div><img src="{{ 'img_right-arrow_1img_right-arrow.png' | asset_url }}" loading="lazy" width="43" alt="" class="img_arrow">
+</div><div class="w-layout-vflex block_how-it-works"><div class="item_how-it-works"><img src="{{ 'img_drying-rack.png' | asset_url }}" loading="lazy" width="194.5" alt="" class="img_how-it-works _2">
+<div class="txt_how-it-works-label">Dried into treats</div></div><img src="{{ 'img_right-arrow_1img_right-arrow.png' | asset_url }}" loading="lazy" width="43" alt="" class="img_arrow">
+</div><div class="w-layout-vflex block_how-it-works"><div class="item_how-it-works"><img src="{{ 'img_treats.png' | asset_url }}" loading="lazy" width="87" alt="" class="img_how-it-works _3">
+<div class="txt_how-it-works-label">Pack your treats</div></div><img src="{{ 'img_right-arrow_1img_right-arrow.png' | asset_url }}" loading="lazy" width="43" alt="" class="img_arrow">
+</div><div class="w-layout-vflex block_how-it-works"><div class="item_how-it-works"><img src="{{ 'img_delivery.png' | asset_url }}" loading="lazy" width="143.5" alt="" class="img_how-it-works _4">
+<div class="txt_how-it-works-label">Ship to you</div></div></div></div><div class="wrap_h-stripe"><div class="h-stripe hide-tablet"></div><div class="h-stripe hide-tablet"></div><div class="h-stripe hide-tablet"></div><div class="h-stripe"></div><div class="h-stripe"></div><div class="h-stripe"></div><div class="h-stripe"></div><div class="h-stripe"></div></div></div> {% schema %} {"tag":"section","name":"category","class":"section_product","settings":[{"id":"collection_collection","type":"collection","label":"Collection"},{"type":"range","id":"collection_collection_limit","min":1,"max":99,"step":1,"label":"Limit: Collection","default":6}],"presets":[{"name":"category","category":"Liquify"}]} {% endschema %}

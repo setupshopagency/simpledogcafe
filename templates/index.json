@@ -1,0 +1,36 @@
+{
+    "sections": {
+        "hero_sdc": {
+            "type": "hero_sdc"
+        },
+        "benefits": {
+            "type": "benefits"
+        },
+        "category": {
+            "type": "category"
+        },
+        "our_story": {
+            "type": "our_story"
+        },
+        "testimonials": {
+            "type": "testimonials"
+        },
+        "social_media": {
+            "type": "social_media"
+        },
+        "instafeed": {
+            "type": "instafeed"
+        }
+    },
+    "layout": "theme",
+    "wrapper": "main.main-wrapper",
+    "order": [
+        "hero_sdc",
+        "benefits",
+        "category",
+        "our_story",
+        "testimonials",
+        "social_media",
+        "instafeed"
+    ]
+}
