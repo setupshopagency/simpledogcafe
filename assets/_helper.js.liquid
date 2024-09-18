@@ -1,13 +1,50 @@
 const LiquifyHelper = {
-    moneyFormat: (value, minor = true) => {
-        const formatter = new Intl.NumberFormat(Shopify.locale + '-' + Shopify.country, {
-            style: 'currency',
-            currency: Shopify.currency.active,
-        });
+    /**
+     * Format a monetary value with the currency-format set in Shopify backend.
+     *
+     * @int value
+     * @bool minor Optional, defaults to true.
+     * @string shopMoneyFormat Shop-Setting, via Liquid: shop.money_with_currency_format
+     */
+    moneyFormat: (value, isMinor = true, shopMoneyFormat = '') => {
+        let floatValue = parseFloat(value);
 
-        value = minor ? value / 100 : value;
+        if (isNaN(floatValue)) {
+            return '';
+        }
 
-        return formatter.format(value);
+        floatValue = isMinor
+            ? floatValue / 100
+            : floatValue;
+
+        let formattedValue = '';
+        const match = shopMoneyFormat.match(/\{\{\s*(\w+)\s*\}\}/);
+        const formatType = match ? match[1] : null;
+
+        switch (formatType) {
+            case 'amount':
+                formattedValue = floatValue.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                break;
+            case 'amount_no_decimals':
+                formattedValue = Math.round(floatValue).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                break;
+            case 'amount_with_comma_separator':
+                formattedValue = floatValue.toFixed(2).replace('.', ',').replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                break;
+            default:
+                console.log('Error in moneyFormat. Unknown format type or none provided: ' + formatType);
+
+                const formatter = new Intl.NumberFormat(Shopify.locale + '-' + Shopify.country, {
+                    style: 'currency',
+                    currency: Shopify.currency.active,
+                });
+
+                value = isMinor ? value / 100 : value;
+
+                return formatter.format(value);
+        }
+
+        return shopMoneyFormat.replace(/\{\{\s*(\w+)\s*\}\}/g, formattedValue);
     },
 
     htmlspecialchars_decode(string) {
@@ -58,5 +95,5 @@ const LiquifyHelper = {
         for (const el of elList) {
             LiquifyHelper.triggerClick(el)
         }
-    }
+    },
 };

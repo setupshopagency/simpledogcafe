@@ -3819,6 +3819,8 @@ figcaption {
   flex-flow: column;
   justify-content: flex-end;
   align-items: stretch;
+  height: 100vh;
+  min-height: 54rem;
   max-height: 96vh;
   padding-top: 5em;
   display: flex;
@@ -4835,6 +4837,10 @@ figcaption {
     overflow: hidden;
   }
 
+  .section_hero {
+    min-height: 52rem;
+  }
+
   .hero-container {
     font-size: 1vw;
   }
@@ -4882,7 +4888,15 @@ figcaption {
     max-width: 15em;
   }
 
-  .product-header_option, .body {
+  .product-header_option {
+    color: var(--texts);
+  }
+
+  .section_hero {
+    min-height: 50rem;
+  }
+
+  .body {
     color: var(--texts);
   }
 
@@ -4905,6 +4919,10 @@ figcaption {
 }
 
 @media screen and (min-width: 1920px) {
+  .section_hero {
+    min-height: 60rem;
+  }
+
   .marquee-wrap {
     transform: translate(16px);
   }
