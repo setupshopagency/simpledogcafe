@@ -1,9 +1,10 @@
 :root {
   --base-color-neutral--black: black;
+  --base-color-neutral--white: white;
   --base-color-neutral--neutral: #666;
   --text-color--text-alternate: var(--base-color-neutral--white);
-  --base-color-neutral--white: white;
   --pork: #d2401a;
+  --brand-yellow: #ff9e01;
   --base-color-neutral--neutral-darker: #3f2b10;
   --texts: #3f2b10;
   --base-color-neutral--neutral-lighter: #ccc;
@@ -13,8 +14,8 @@
   --border-radius--small: .25rem;
   --base-color-system--focus-state: #2d62ff;
   --background-color--background-tertiary: var(--base-color-brand--pink);
-  --brand-yellow: #ff9e01;
   --base-color-neutral--neutral-lightest: #eee;
+  --light-background: #ffeaca;
   --text-color--text-error: var(--base-color-system--error-red-dark);
   --base-color-system--success-green-dark: #17660f;
   --background-color--background-error: var(--base-color-system--error-red);
@@ -26,7 +27,6 @@
   --background-color--background-alternate: var(--base-color-neutral--white);
   --background-color--background-success: var(--base-color-system--success-green);
   --text-color--text-success: var(--base-color-system--success-green-dark);
-  --light-background: #ffeaca;
   --1em: 1em;
   --base-color-brand--blue-light: #d9e5ff;
   --base-color-brand--blue: #2d62ff;
@@ -237,6 +237,11 @@ figcaption {
 }
 
 .utility-page_component {
+  background-color: #fbf3e2;
+  background-image: url({{ 'img_awning-roof-top.png' | asset_url }}), url({{ 'img_light-vertical-strips.png' | asset_url }});
+  background-position: 50% 0, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: contain, contain;
   justify-content: center;
   align-items: center;
   width: 100vw;
@@ -322,11 +327,12 @@ figcaption {
 }
 
 .form-checkbox-icon {
+  background-color: var(--base-color-neutral--white);
   border: 1px solid #000;
   border-radius: .125rem;
   flex: none;
-  width: .875rem;
-  height: .875rem;
+  width: 1.5rem;
+  height: 1.5rem;
   margin: .2rem .5rem 0 0;
 }
 
@@ -344,6 +350,10 @@ figcaption {
   height: .875rem;
   margin: 0 .5rem 0 0;
   box-shadow: 0 0 .25rem 0 #3898ec;
+}
+
+.form-checkbox-label.text-size-small {
+  font-size: 1.2rem;
 }
 
 .icon-1x1-small {
@@ -420,6 +430,10 @@ figcaption {
   line-height: 1.2;
 }
 
+.text-rich-text {
+  font-size: 1rem;
+}
+
 .text-rich-text h1, .text-rich-text h2, .text-rich-text h3, .text-rich-text h4 {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
@@ -452,16 +466,17 @@ figcaption {
   line-height: 1.1;
 }
 
+.heading-style-h1.center {
+  color: #ca7300;
+  text-align: center;
+  font-family: Galada, sans-serif;
+  font-size: 6rem;
+}
+
 .padding-global {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
   position: relative;
-}
-
-.padding-global.padding-section-medium.product-recommendations {
-  background-color: #ffeaca;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
 }
 
 .padding-global.padding-section-medium.adj-remove-top-bottom-padding {
@@ -532,6 +547,7 @@ figcaption {
 }
 
 .text-size-regular.text-weight-bold {
+  color: var(--brand-yellow);
   font-size: 1.3rem;
 }
 
@@ -617,7 +633,7 @@ figcaption {
 .heading-style-h4.product-card-name {
   color: var(--pork);
   font-family: Galada, sans-serif;
-  font-size: 5.5em;
+  font-size: 5em;
   font-weight: 400;
   line-height: 1;
 }
@@ -625,6 +641,11 @@ figcaption {
 .heading-style-h4.text-weight-normal {
   font-size: 1em;
   font-weight: 400;
+}
+
+.field-label {
+  font-size: 1.3rem;
+  font-weight: 700;
 }
 
 .max-width-xlarge {
@@ -635,11 +656,12 @@ figcaption {
 .form-input {
   border: 1px solid var(--base-color-neutral--neutral-lighter);
   border-radius: var(--border-radius--medium);
-  background-color: #0000;
+  background-color: var(--base-color-neutral--white);
   width: 100%;
   min-height: 3.5rem;
   margin-bottom: 0;
   padding: .5rem 1rem;
+  font-size: 1rem;
 }
 
 .form-input.is-text-area {
@@ -684,10 +706,19 @@ figcaption {
 }
 
 .heading-style-h2 {
+  color: var(--pork);
   font-family: Galada, sans-serif;
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 1;
+}
+
+.heading-style-h2.text-align-center.utility-page {
+  color: var(--pork);
+}
+
+.heading-style-h2.text-align-center.h2_page-subheading {
+  text-transform: none;
 }
 
 .heading-style-h2.text-color-white {
@@ -726,6 +757,7 @@ figcaption {
   max-width: 85rem;
   margin-left: auto;
   margin-right: auto;
+  font-size: 1rem;
 }
 
 .container-large.bg {
@@ -849,6 +881,10 @@ figcaption {
   font-size: 2.2em;
 }
 
+.button.colored {
+  background-color: var(--pork);
+}
+
 .li-styleguide_classes {
   grid-column-gap: 1px;
   grid-row-gap: 1px;
@@ -860,6 +896,16 @@ figcaption {
 
 .text-size-medium {
   font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.text-size-medium.center {
+  text-align: center;
+  font-weight: 600;
+}
+
+.text-size-medium.txt_paragraph-dark {
+  font-weight: 600;
 }
 
 .li-styleguide_section {
@@ -911,12 +957,19 @@ figcaption {
   font-size: 1vw;
 }
 
+.section_account {
+  padding-left: 2rem;
+  padding-right: 3rem;
+  font-size: 1rem;
+}
+
 .cart_grid-wrapper {
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   grid-template-rows: auto;
   grid-template-columns: 2fr 1fr;
   grid-auto-columns: 1fr;
+  font-size: 1rem;
   display: grid;
 }
 
@@ -927,6 +980,7 @@ figcaption {
 
 .cart_table.outline-solid-1 {
   border: 1px solid var(--base-color-neutral--neutral-lightest);
+  font-size: 1rem;
 }
 
 .cart_grid {
@@ -1189,9 +1243,13 @@ figcaption {
 }
 
 .gift_card {
-  border: 1px solid var(--base-color-neutral--neutral-lightest);
-  background-color: var(--base-color-neutral--white);
+  border: 1px solid var(--light-background);
+  background-color: var(--brand-yellow);
   text-align: left;
+  background-image: url({{ 'logo1_RGB_300Dpi.png' | asset_url }}), url({{ 'img_our-story-hero.png' | asset_url }});
+  background-position: 10% 10%, 160% 0;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 13rem, 23rem;
   border-radius: 1em;
   flex-direction: column;
   justify-content: space-between;
@@ -1218,6 +1276,7 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
+  font-size: 1rem;
   display: grid;
 }
 
@@ -1259,17 +1318,20 @@ figcaption {
 }
 
 .section_account-nav {
+  font-size: 1rem;
   overflow: hidden;
 }
 
 .account-tabs_wrapper {
   grid-column-gap: 4rem;
   grid-row-gap: 4rem;
-  border-bottom: 1px solid var(--base-color-neutral--neutral-lightest);
+  border-bottom: 1px solid var(--brand-yellow);
   grid-template-rows: auto;
   grid-template-columns: auto auto auto 1fr;
   grid-auto-columns: 1fr;
   margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 700;
   display: grid;
 }
 
@@ -1291,6 +1353,7 @@ figcaption {
   grid-template-rows: auto auto;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-columns: 1fr;
+  font-size: 1rem;
   display: grid;
 }
 
@@ -1299,6 +1362,7 @@ figcaption {
   border-width: 1px;
   border-color: #9b9b9b29 #9b9b9b29 var(--base-color-neutral--neutral-lightest);
   border-radius: var(--border-radius--small);
+  background-color: var(--base-color-neutral--white);
   padding: 0;
 }
 
@@ -1449,6 +1513,7 @@ figcaption {
   flex-direction: column;
   margin-bottom: 0;
   padding: 2.5rem 5rem;
+  font-size: 1rem;
   display: flex;
 }
 
@@ -1486,7 +1551,7 @@ figcaption {
 
 .mini-cart_component {
   color: var(--texts);
-  background-color: #ff9e01f2;
+  background-color: #ffe3b6f2;
   flex-direction: column;
   align-items: stretch;
   width: 30vw;
@@ -1594,9 +1659,10 @@ figcaption {
 }
 
 .mini-cart_full {
-  flex-direction: column;
+  flex-flow: column;
   flex: 1;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: stretch;
   max-height: 100vh;
   display: flex;
 }
@@ -2423,6 +2489,10 @@ figcaption {
   display: flex;
 }
 
+.nav_logo-img.hide-logo {
+  opacity: 0;
+}
+
 .product-item_price {
   grid-column-gap: 1em;
   grid-row-gap: 1em;
@@ -2665,6 +2735,7 @@ figcaption {
 }
 
 .section_content-header {
+  z-index: 30;
   position: relative;
 }
 
@@ -2760,6 +2831,7 @@ figcaption {
   flex-direction: column;
   align-items: stretch;
   margin-bottom: 0;
+  font-size: 1rem;
 }
 
 .contact_form {
@@ -2781,6 +2853,14 @@ figcaption {
 
 .error-text {
   color: #e23939;
+}
+
+.section_filters {
+  background-color: #fbf3e2;
+  background-image: url({{ 'img_light-vertical-strips.png' | asset_url }});
+  background-position: 0 0;
+  background-size: contain;
+  margin-bottom: 1rem;
 }
 
 .filter_layout {
@@ -2959,9 +3039,15 @@ figcaption {
 }
 
 .section_under-construction {
+  background-color: #fbf3e2;
+  background-image: url({{ 'svg_simpe-dog-cafe-logo.png' | asset_url }}), url({{ 'img_awning-roof-top.png' | asset_url }}), url({{ 'img_light-vertical-strips.png' | asset_url }});
+  background-position: 50% 7%, 50% 0, 0 0;
+  background-repeat: no-repeat, repeat-x, repeat;
+  background-size: 27vw, contain, contain;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-size: 1rem;
   display: flex;
   position: relative;
 }
@@ -3925,6 +4011,7 @@ figcaption {
 
 .body {
   color: var(--texts);
+  font-weight: 600;
 }
 
 .h1_headline-highlight {
@@ -4564,6 +4651,7 @@ figcaption {
 }
 
 .container-footer.global-padding-clyde {
+  border-width: 7px;
   border-radius: 2em;
 }
 
@@ -4837,13 +4925,17 @@ figcaption {
   background-color: #fbf3e2;
   background-image: url({{ 'img_light-vertical-strips.png' | asset_url }});
   background-position: 50%;
-  background-size: cover;
+  background-size: contain;
   border-radius: 2em;
   width: 100vw;
   max-width: 98vw;
   margin: 4rem auto 1.5em;
   padding-top: 12em;
   padding-bottom: 5em;
+}
+
+.section_page-content._404-utility-page {
+  padding-top: 2em;
 }
 
 .text-block {
@@ -4869,9 +4961,10 @@ figcaption {
   display: flex;
 }
 
-.wrap_sub-page-heading {
+.wrap_sub-page-container {
   padding-left: 2em;
   padding-right: 2em;
+  font-weight: 500;
 }
 
 .h2_page-subheading {
@@ -4886,6 +4979,10 @@ figcaption {
   text-align: center;
 }
 
+.h2_page-subheading.contact-us {
+  font-size: 5rem;
+}
+
 .lottie_yellow-circle {
   z-index: 24;
   opacity: .6;
@@ -4894,7 +4991,25 @@ figcaption {
   inset: auto auto -17.8em -24.8em;
 }
 
+.note-in-cart {
+  text-align: center;
+  font-weight: 500;
+}
+
+.lottie_lost-puppy {
+  pointer-events: none;
+  width: 100vw;
+  max-width: 50vw;
+  margin-bottom: -11vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media screen and (min-width: 1280px) {
+  .heading-style-h4.product-card-name {
+    font-size: 4.8em;
+  }
+
   .product-item_image-link {
     overflow: hidden;
   }
@@ -4932,10 +5047,6 @@ figcaption {
 @media screen and (min-width: 1440px) {
   .text-size-regular.price {
     color: var(--texts);
-  }
-
-  .heading-style-h4.product-card-name {
-    font-size: 6em;
   }
 
   .mini-cart_footer {
@@ -5042,6 +5153,10 @@ figcaption {
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     grid-template-columns: 1fr;
+  }
+
+  .heading-style-h1.center {
+    font-size: 5rem;
   }
 
   .padding-global.max-width-full {
@@ -5473,6 +5588,10 @@ figcaption {
     display: flex;
   }
 
+  .section_under-construction {
+    background-size: 37vw, 150vw, contain;
+  }
+
   .pagination_list {
     grid-column-gap: 1rem;
     grid-row-gap: 1rem;
@@ -5885,6 +6004,10 @@ figcaption {
   .h2_page-subheading {
     font-size: 2.6rem;
   }
+
+  .h2_page-subheading.contact-us {
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -6208,6 +6331,10 @@ figcaption {
   .filter_tablet-modal-menu {
     padding-top: .5rem;
     padding-bottom: .5rem;
+  }
+
+  .section_under-construction {
+    background-size: 50vw, 214vw, contain;
   }
 
   .section_li-hero {
@@ -6654,6 +6781,14 @@ figcaption {
   .h2_page-subheading {
     font-size: 2rem;
   }
+
+  .h2_page-subheading.contact-us {
+    font-size: 4rem;
+  }
+
+  .lottie_lost-puppy {
+    max-width: 70vw;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -6673,6 +6808,10 @@ figcaption {
     padding-top: 0;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .heading-style-h1.center {
+    font-size: 2.9rem;
   }
 
   .padding-global {
@@ -6829,7 +6968,6 @@ figcaption {
 
   .login_form {
     margin-bottom: 1em;
-    padding: 0;
   }
 
   .login_image {
@@ -6981,6 +7119,10 @@ figcaption {
     flex-flow: column;
     justify-content: space-between;
     align-items: flex-start;
+  }
+
+  .section_under-construction {
+    background-size: 70vw, 300vw, contain;
   }
 
   .section_li-hero {
@@ -7350,6 +7492,14 @@ figcaption {
 
   .h2_page-subheading {
     font-size: 1.3rem;
+  }
+
+  .h2_page-subheading.contact-us {
+    font-size: 2.1rem;
+  }
+
+  .lottie_lost-puppy {
+    max-width: 80vw;
   }
 }
 

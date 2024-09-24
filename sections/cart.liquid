@@ -1,4 +1,4 @@
-<div class="padding-global padding-section-small"><div class="container-large"><div class="headline-wrapper"><h2 id="w-node-e70215e6-46ed-17af-2aa7-195241f33af3-45b77d69" class="heading-style-h2">Cart</h2><a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="text-size-small text-style-link hide-mobile-landscape">Continue shopping</a></div>{% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0" class="w-form">
+<div class="headline-wrapper"><h2 id="w-node-e70215e6-46ed-17af-2aa7-195241f33af3-45b77d69" class="heading-style-h2">Cart</h2><a href="{{ routes.root_url }}" li-object:href="routes.root_url" class="text-size-small text-style-link hide-mobile-landscape">Continue shopping</a></div>{% if cart.item_count > 0 %}    <div li-if="cart.item_count > 0" class="w-form">
     {% form 'cart', cart, class: 'cart_grid-wrapper' %}
 <div class="cart_table outline-solid-1"><div class="cart_grid is-header w-hidden-tiny"><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33afb-45b77d69" class="cart_table-header"><p class="text-size-regular">Product</p></div><div class="cart_table-header"><p class="text-size-regular">Quantity</p></div><div id="w-node-e70215e6-46ed-17af-2aa7-195241f33b01-45b77d69" class="cart_table-header"><p class="text-size-regular">Price</p></div></div>{% for item in cart.items %}    <div li-for="item in cart.items" class="cart_grid">
                                     
@@ -23,4 +23,4 @@
 <div class="w-form-done"><div>Thank you! Your submission has been received!</div></div><div class="w-form-fail"><div>Oops! Something went wrong while submitting the form.</div></div>    </div>
 {% endif %}{% if cart.item_count == 0 %}    <div li-if="cart.item_count == 0" class="cart_empty outline-solid-1">
     <div>No Products yet.</div><a href="../index.html" class="button w-button">Shop Now</a>    </div>
-{% endif %}</div></div> {% schema %} {"tag":"section","name":"cart","class":"section_account","presets":[{"name":"cart","category":"Liquify"}]} {% endschema %}
+{% endif %} {% schema %} {"tag":"section","name":"cart","class":"section_account","presets":[{"name":"cart","category":"Liquify"}]} {% endschema %}
