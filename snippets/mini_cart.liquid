@@ -182,35 +182,4 @@
             <div li-js-if="total.price < original_total_price">
         <div li-js-price="original_total_price" class="text-size-regular text-weight-bold text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(original_total_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>        </div>
     </template>
-</div></div><div li-element="mini-cart-api-response" class="mini-cart_footer-message"></div><a x-bind:href="'/checkout'" href="#" class="button cta_button w-button">Proceed to Checkout</a><div class="w-embed w-script">{% assign cart_items = cart.items | map: 'product_id' %}
-                            <div class="recommended-products">{% for product in collections['homepage'].products %}
-                              <div class="recommended-product" data-product-id="{{ product.id }}"><a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'small' }}" alt="{{ product.title }}">
-<p>{{ product.title }}</p></a></div>{% endfor %}
-                            </div><script>document.addEventListener("DOMContentLoaded", function() {
-    try {
-      // Get cart items from Liquid
-      var cartItems = {{ cart_items | json }};
-      console.log('Cart Items:', cartItems);
-      // Check if cartItems exist
-      if (!Array.isArray(cartItems) || cartItems.length === 0) {
-        throw new Error('No items in the cart or unable to retrieve cart items.');
-      }
-      // Get recommended products
-      var products = document.querySelectorAll('.recommended-product');
-      if (products.length === 0) {
-        throw new Error('No products found in the Home page collection.');
-      }
-      console.log('Recommended Products:', products);
-      // Loop through recommended products and hide if in cart
-      products.forEach(function(product) {
-        var productId = parseInt(product.getAttribute('data-product-id'));
-        if (cartItems.includes(productId)) {
-          product.style.display = 'none'; // Hide the product if it's in the cart
-          console.log('Hiding product with ID:', productId);
-        }
-      });
-    } catch (error) {
-      console.error(error.message);
-    }
-  });
-</script></div></div></div><div li-cloak="hide" li-element="mini-cart-empty" :style="total.items && { display: 'none' }"><div class="mini-cart_header"><div class="heading-style-h3">Cart</div><div li-mini-cart-toggle="" class="mini-cart_close w-embed" @click="$dispatch('cartupdated.window')"><svg width="15" height="15" viewbox="0 0 15 15" fill="none"><path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path></svg></div></div><div class="mini-cart_empty"><div class="text-size-regular">No Products selected</div></div></div></div></nav></div>
+</div></div><div li-element="mini-cart-api-response" class="mini-cart_footer-message"></div><a x-bind:href="'/checkout'" href="#" class="button cta_button w-button">Checkout</a><a href="#" class="note-in-cart">Shipping & taxes calculated at checkout</a></div></div><div li-cloak="hide" li-element="mini-cart-empty" :style="total.items && { display: 'none' }"><div class="mini-cart_header"><div class="heading-style-h3">Cart</div><div li-mini-cart-toggle="" class="mini-cart_close w-embed" @click="$dispatch('cartupdated.window')"><svg width="15" height="15" viewbox="0 0 15 15" fill="none"><path d="M1.84775 14.178L0.447754 12.778L6.04775 7.17798L0.447754 1.57798L1.84775 0.177979L7.44775 5.77798L13.0478 0.177979L14.4478 1.57798L8.84775 7.17798L14.4478 12.778L13.0478 14.178L7.44775 8.57798L1.84775 14.178Z" fill="currentColor"></path></svg></div></div><div class="mini-cart_empty"><div class="text-size-regular">No Products selected</div></div></div></div></nav></div>
