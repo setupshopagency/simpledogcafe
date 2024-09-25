@@ -64,5 +64,10 @@
                             {% render 'product_item', product: product %}
 
                             
+                            <div class="code-embed w-embed w-script"><script>document.querySelectorAll('.heading-style-h4').forEach(element => {
+    element.innerHTML = element.innerHTML.replace(/ /g, '<br>');
+});
+</script></div>
+                            
                         </li>
 {% endfor %}</ul></div></div></div></section> {% schema %} {"tag":"section","name":"product_hero","class":"section_page-content","settings":[{"id":"text_headline","type":"text","label":"Headline","default":"Description"}],"presets":[{"name":"product_hero","category":"Liquify"}]} {% endschema %}
