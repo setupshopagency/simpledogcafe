@@ -32,7 +32,7 @@
                             <option value="{{ option.value }}" {% if option.value == collection.sort_by %}selected{% elsif option.value == collection.default_sort_by %}selected{% endif %}>{{ option.name }}</option>
                             
                     {% endfor %}    </select>
-</div><div class="w-dyn-list"><div role="list" class="filter_product-list w-dyn-items">{% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="w-dyn-item">
+</div><div class="collection-list-wrapper w-dyn-list"><div role="list" class="filter_product-list w-dyn-items">{% for product in collection.products %}    <div li-for="product in collection.products" role="listitem" class="collection-item w-dyn-item">
                                     
                             {% render 'product_item', product: product %}
 
