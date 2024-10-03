@@ -182,7 +182,7 @@
             <div li-js-if="total.price < original_total_price">
         <div li-js-price="original_total_price" class="text-size-regular text-weight-bold text-style-strikethrough text-style-muted" x-text="LiquifyHelper.moneyFormat(original_total_price, true, '{{ shop.money_with_currency_format }}')">14,99 $</div>        </div>
     </template>
-</div></div><div li-element="mini-cart-api-response" class="mini-cart_footer-message"></div><a x-bind:href="'/checkout'" href="#" class="button cta_button w-button">Checkout</a><a href="#" class="note-in-cart text-size-tiny">Shipping & taxes calculated at checkout</a><div class="payment-options"><img src="{{ 'Amex.png' | asset_url }}" loading="lazy" alt="" class="icon_payment-option in-cart">
+</div></div><div li-element="mini-cart-api-response" class="mini-cart_footer-message"></div><div class="wrap"><a x-bind:href="'/checkout'" href="#" class="button cta_button w-button">Checkout</a><a href="#" class="note-in-cart text-size-tiny">Shipping & taxes calculated at checkout</a></div><div class="payment-options"><img src="{{ 'Amex.png' | asset_url }}" loading="lazy" alt="" class="icon_payment-option in-cart">
 <img src="{{ 'ApplePay.png' | asset_url }}" loading="lazy" alt="" class="icon_payment-option in-cart">
 <img src="{{ 'DinersClub.png' | asset_url }}" loading="lazy" alt="" class="icon_payment-option in-cart">
 <img src="{{ 'Discover.png' | asset_url }}" loading="lazy" alt="" class="icon_payment-option in-cart">
