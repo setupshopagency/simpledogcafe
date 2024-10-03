@@ -2041,12 +2041,10 @@ figcaption {
 }
 
 .product-header_layout {
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
   grid-template-rows: auto;
   grid-template-columns: minmax(50%, 50%) 50%;
   grid-auto-columns: 1fr;
-  align-items: start;
+  place-items: start stretch;
   display: grid;
 }
 
@@ -5740,7 +5738,7 @@ figcaption {
   }
 
   .swiper-container.is-product-gallery {
-    width: 92vw;
+    width: 100%;
     padding-right: 0;
     position: static;
   }
@@ -6560,7 +6558,6 @@ figcaption {
   }
 
   .swiper-container.is-product-gallery {
-    width: 100%;
     position: static;
   }
 
