@@ -956,6 +956,7 @@ figcaption {
 }
 
 .section_navbar {
+  z-index: 99;
   font-size: 1vw;
   position: absolute;
 }
@@ -1811,7 +1812,6 @@ figcaption {
 }
 
 .nav_container {
-  z-index: 35;
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
   grid-template-rows: auto;
@@ -1830,6 +1830,11 @@ figcaption {
   z-index: 40;
   position: absolute;
   inset: auto auto .4em;
+}
+
+.nav_logo-link.w--current {
+  z-index: 25;
+  cursor: pointer;
 }
 
 .nav_menu {
@@ -3058,7 +3063,7 @@ figcaption {
 
 .section_under-construction {
   background-color: #fbf3e2;
-  background-image: url({{ 'svg_simpe-dog-cafe-logo.png' | asset_url }}), url({{ 'img_awning-roof-top.png' | asset_url }}), url({{ 'img_light-vertical-strips.png' | asset_url }});
+  background-image: url({{ 'logo1_RGB_300Dpi_1-p-500.png' | asset_url }}), url({{ 'img_awning-roof-top.png' | asset_url }}), url({{ 'img_light-vertical-strips.png' | asset_url }});
   background-position: 50% 7%, 50% 0, 0 0;
   background-repeat: no-repeat, repeat-x, repeat;
   background-size: 27vw, contain, contain;
@@ -4155,7 +4160,7 @@ figcaption {
 }
 
 .img_awning-roof-top {
-  z-index: 35;
+  z-index: 20;
   width: 100em;
   max-width: 98em;
   display: block;
@@ -4172,7 +4177,6 @@ figcaption {
 }
 
 .wrap_header {
-  z-index: 30;
   width: 100em;
   display: flex;
   position: relative;
@@ -6284,6 +6288,7 @@ figcaption {
   }
 
   .img_awning-roof-top {
+    z-index: 20;
     max-width: 96em;
   }
 
