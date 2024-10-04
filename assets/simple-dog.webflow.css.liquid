@@ -1825,7 +1825,7 @@ figcaption {
 .nav_logo-link {
   z-index: 40;
   position: absolute;
-  inset: auto auto 3em;
+  inset: auto auto .4em;
 }
 
 .nav_menu {
@@ -4255,7 +4255,11 @@ figcaption {
 }
 
 .img_logo {
+  background-color: #fff;
+  border-radius: 1rem;
   max-width: 29em;
+  padding: 1rem;
+  box-shadow: 0 2px 15px #e7d9b9;
 }
 
 .u_align-center {
@@ -4693,6 +4697,10 @@ figcaption {
 .img_footer-logo {
   width: 100em;
   max-width: 29em;
+}
+
+.links {
+  flex: 1;
 }
 
 .link-footer {
@@ -5215,6 +5223,10 @@ figcaption {
   height: 24px;
 }
 
+.icon_payment-option.in-cart {
+  height: 18px;
+}
+
 .payment-options {
   grid-column-gap: .6rem;
   grid-row-gap: .6rem;
@@ -5648,6 +5660,10 @@ figcaption {
     grid-template-columns: 1fr min-content min-content;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  .nav_logo-link {
+    bottom: -.5em;
   }
 
   .nav_menu {
@@ -6623,6 +6639,7 @@ figcaption {
 
   .nav_logo-link {
     padding-left: 0;
+    bottom: -2.2em;
   }
 
   .nav_menu.is-page-height-tablet {
@@ -7183,6 +7200,10 @@ figcaption {
     height: 3rem;
   }
 
+  .icons {
+    height: 1.4rem;
+  }
+
   .icon_payment-option.in-cart {
     height: 16px;
   }
@@ -7233,6 +7254,7 @@ figcaption {
   }
 
   .text-size-regular.text-weight-bold {
+    text-align: left;
     font-size: .9rem;
   }
 
@@ -7408,7 +7430,7 @@ figcaption {
   }
 
   .nav_logo-link {
-    top: .8em;
+    top: 1.9em;
     bottom: auto;
     left: auto;
   }
@@ -7713,7 +7735,8 @@ figcaption {
   }
 
   .img_logo {
-    max-width: 60em;
+    max-width: 42em;
+    padding: .25rem;
     bottom: -4.6em;
   }
 
