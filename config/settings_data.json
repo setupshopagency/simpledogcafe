@@ -12,6 +12,9 @@
     "sections": {
       "header": {
         "type": "header",
+        "custom_css": [
+          ".section_navbar {margin-bottom: 100px;}"
+        ],
         "settings": {
         }
       },
@@ -35,6 +38,11 @@
       },
       "account_orders": {
         "type": "account_orders",
+        "settings": {
+        }
+      },
+      "account_addresses": {
+        "type": "account_addresses",
         "settings": {
         }
       }
