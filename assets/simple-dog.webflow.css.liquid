@@ -5702,19 +5702,19 @@ figcaption {
   }
 
   .nav_menu.is-page-height-tablet {
-    border-bottom-width: 0;
-    border-bottom-color: var(--base-color-neutral--neutral-lightest);
-    background-color: var(--base-color-neutral--white);
+    background-color: var(--brand-orage);
     background-image: linear-gradient(#ede8dd, #fff 29%);
-    border-radius: 2rem;
-    max-height: 75vh;
-    margin-top: 7vh;
+    border: 0 solid #000;
+    border-radius: 1rem;
+    max-height: 40%;
+    margin-top: 13vh;
     margin-right: 1rem;
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-left: 2rem;
     padding-right: 2rem;
     transition: height .5s;
-    position: absolute;
+    position: fixed;
+    inset: 0% 0% auto auto;
     overflow: auto;
   }
 
@@ -6214,6 +6214,7 @@ figcaption {
   }
 
   .section_hero {
+    min-height: auto;
     max-height: 69em;
   }
 
@@ -6291,6 +6292,7 @@ figcaption {
   }
 
   .wrap_header {
+    z-index: auto;
     margin-bottom: -49px;
   }
 
@@ -6685,10 +6687,14 @@ figcaption {
     bottom: -2.2em;
   }
 
+  .nav_logo-link.w--current {
+    z-index: 40;
+  }
+
   .nav_menu.is-page-height-tablet {
     background-image: linear-gradient(#f5f1e8, #fff 29%);
-    margin-top: 6vh;
-    padding-bottom: 6rem;
+    margin-top: 12vh;
+    padding-bottom: 2rem;
   }
 
   .nav_dropdown-link_child {
@@ -7221,7 +7227,10 @@ figcaption {
   }
 
   .section_page-content {
-    padding-top: 9em;
+    margin-top: 2.7rem;
+    padding-top: 14em;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .h2_page-subheading {
@@ -7489,7 +7498,7 @@ figcaption {
   }
 
   .nav_menu.is-page-height-tablet {
-    margin-top: 7vh;
+    margin-top: 10vh;
     margin-right: .5rem;
     padding-left: 0%;
     padding-right: 0%;
@@ -7509,10 +7518,6 @@ figcaption {
   .nav_dropdown-link {
     padding-top: .45rem;
     padding-bottom: .45rem;
-  }
-
-  .nav_menu-button.w--open {
-    margin-top: .25rem;
   }
 
   .nav_dropdown-link_child {
@@ -7698,8 +7703,7 @@ figcaption {
   }
 
   .section_hero {
-    min-height: 41rem;
-    max-height: 161em;
+    max-height: 176em;
   }
 
   .hero-container {
@@ -7971,6 +7975,13 @@ figcaption {
   .button-bg {
     flex-flow: column;
     display: flex;
+  }
+
+  .section_page-content {
+    margin-top: 2.3rem;
+    padding-top: 20em;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .h2_page-subheading {
