@@ -31,7 +31,7 @@
       "account_hero": {
         "type": "account_hero",
         "custom_css": [
-
+          ".section_navbar {position: relative;}"
         ],
         "settings": {
         }
