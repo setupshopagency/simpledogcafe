@@ -39,7 +39,7 @@
       "account_orders": {
         "type": "account_orders",
         "custom_css": [
-          ".frcp-app {margin-top: 250px;}"
+
         ],
         "settings": {
         }
