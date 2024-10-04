@@ -14,7 +14,7 @@
         "type": "header",
         "custom_css": [
           ".section_navbar {position: static;}",
-          ".main-wrapper {font-size: 1rem;}"
+          ".main-wrapper {font-size: 1rem !important;}"
         ],
         "settings": {
         }
