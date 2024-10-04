@@ -794,6 +794,10 @@ figcaption {
   font-size: 1em;
 }
 
+.main-wrapper.c-remove-vw-in-typography {
+  font-size: 1rem;
+}
+
 .align-center {
   margin-left: auto;
   margin-right: auto;
@@ -4453,6 +4457,10 @@ figcaption {
   overflow: hidden;
 }
 
+.card_our-story.promo-section {
+  padding: 0;
+}
+
 .our-story {
   grid-column-gap: 1.5em;
   grid-row-gap: 1.5em;
@@ -4952,7 +4960,7 @@ figcaption {
   max-width: 98vw;
   margin: 4rem auto 1.5em;
   padding-top: 12em;
-  padding-bottom: 0;
+  padding-bottom: 4em;
 }
 
 .section_page-content._404-utility-page {
@@ -5370,6 +5378,10 @@ figcaption {
   border-color: var(--base-color-neutral--neutral-lighter);
 }
 
+.link-block {
+  display: block;
+}
+
 @media screen and (min-width: 1280px) {
   .heading-style-h4.product-card-name {
     font-size: 4.8em;
@@ -5677,14 +5689,20 @@ figcaption {
   }
 
   .nav_menu.is-page-height-tablet {
+    border-bottom-width: 0;
     border-bottom-color: var(--base-color-neutral--neutral-lightest);
     background-color: var(--base-color-neutral--white);
-    max-height: 90vh;
-    padding-bottom: 3.9rem;
-    padding-right: 5%;
+    background-image: linear-gradient(#ede8dd, #fff 29%);
+    border-radius: 2rem;
+    max-height: 75vh;
+    margin-top: 7vh;
+    margin-right: 1rem;
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     transition: height .5s;
     position: absolute;
-    overflow: scroll;
+    overflow: auto;
   }
 
   .nav_menu-dropdown {
@@ -5693,7 +5711,7 @@ figcaption {
     width: 100%;
     height: auto;
     font-size: 1.125rem;
-    font-weight: 700;
+    font-weight: 900;
   }
 
   .nav_dropdown-toggle {
@@ -5706,7 +5724,12 @@ figcaption {
     padding-bottom: .75rem;
     padding-left: 0;
     font-size: 1.5rem;
+    transition: color .2s ease-in-out;
     display: flex;
+  }
+
+  .nav_dropdown-toggle:hover {
+    color: var(--brand-orage);
   }
 
   .dropdown-icon {
@@ -5739,11 +5762,18 @@ figcaption {
     padding: .75rem 0 .75rem 0%;
   }
 
+  .nav_menu-button {
+    margin-top: 1rem;
+  }
+
   .nav_menu-button.w--open {
     background-color: #0000;
   }
 
   .menu-icon {
+    border: 2px solid var(--brand-yellow);
+    background-color: var(--brand-orage);
+    border-radius: 6rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -5756,7 +5786,7 @@ figcaption {
   }
 
   .menu-icon_line-top {
-    background-color: var(--base-color-neutral--black);
+    background-color: var(--base-color-neutral--white);
     width: 24px;
     height: 2px;
     padding-bottom: 0;
@@ -5764,7 +5794,7 @@ figcaption {
   }
 
   .menu-icon_line-middle {
-    background-color: var(--base-color-neutral--black);
+    background-color: var(--base-color-neutral--white);
     justify-content: center;
     align-items: center;
     width: 24px;
@@ -5784,7 +5814,7 @@ figcaption {
   }
 
   .menu-icon_line-bottom {
-    background-color: var(--base-color-neutral--black);
+    background-color: var(--base-color-neutral--white);
     width: 24px;
     height: 2px;
     padding-bottom: 0;
@@ -6643,6 +6673,8 @@ figcaption {
   }
 
   .nav_menu.is-page-height-tablet {
+    background-image: linear-gradient(#f5f1e8, #fff 29%);
+    margin-top: 6vh;
     padding-bottom: 6rem;
   }
 
@@ -7435,7 +7467,13 @@ figcaption {
     left: auto;
   }
 
+  .nav_logo-link.w--current {
+    top: 2.5em;
+  }
+
   .nav_menu.is-page-height-tablet {
+    margin-top: 7vh;
+    margin-right: .5rem;
     padding-left: 0%;
     padding-right: 0%;
   }
@@ -7454,6 +7492,10 @@ figcaption {
   .nav_dropdown-link {
     padding-top: .45rem;
     padding-bottom: .45rem;
+  }
+
+  .nav_menu-button.w--open {
+    margin-top: .25rem;
   }
 
   .nav_dropdown-link_child {
@@ -7639,6 +7681,7 @@ figcaption {
   }
 
   .section_hero {
+    min-height: 41rem;
     max-height: 161em;
   }
 
@@ -7932,6 +7975,11 @@ figcaption {
 
   .table3_component-cell {
     height: 60px;
+  }
+
+  .table3_component-cell.left {
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .logo-compare {
