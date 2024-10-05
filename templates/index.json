@@ -43,6 +43,7 @@
     },
     "instafeed": {
       "type": "instafeed",
+      "disabled": true,
       "settings": {
       }
     }
