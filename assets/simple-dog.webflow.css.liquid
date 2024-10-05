@@ -5071,7 +5071,7 @@ figcaption {
 .product-benefits {
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   display: flex;
 }
@@ -5412,8 +5412,18 @@ figcaption {
   inset: 0% 0% auto auto;
 }
 
-.option-1, .option-2 {
+.option-1, .option-2, .text-block-6 {
   display: none;
+}
+
+.text-block-7 {
+  text-align: center;
+}
+
+.text-block-7.text-size-tiny {
+  color: var(--pork);
+  padding-top: .5rem;
+  font-weight: 800;
 }
 
 @media screen and (min-width: 1280px) {
@@ -8031,6 +8041,16 @@ figcaption {
     max-width: 80vw;
   }
 
+  .product-benefit {
+    grid-column-gap: .25rem;
+    grid-row-gap: .25rem;
+    flex-flow: column;
+  }
+
+  .text_product-benefit {
+    text-align: center;
+  }
+
   .table_product-comparison {
     margin-left: 0;
     margin-right: 0;
@@ -8069,6 +8089,10 @@ figcaption {
     padding-bottom: .75rem;
     font-size: 1.1rem;
     display: flex;
+  }
+
+  .text-block-6 {
+    text-align: left;
   }
 }
 
