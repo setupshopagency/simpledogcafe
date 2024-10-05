@@ -16,7 +16,8 @@
 
         ],
         "settings": {
-          "position_setting": "static"
+          "position_setting": "absolute",
+          "color": "yellow"
         }
       },
       "login": {
