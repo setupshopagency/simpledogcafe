@@ -32,6 +32,12 @@
   // Check if the URL contains '/account'
   if (window.location.pathname.includes('/account') || window.location.hash.includes('/account')) {
     console.log('account page loaded');
+    // Select the element with class '.section_navbar'
+    const navbar = document.querySelector('.section_navbar');
+    // If the element exists, change its style
+    if (navbar) {
+      navbar.style.position = 'static';
+    }
   }
 });
 </script></div> {% schema %} {"tag":"header","name":"header","class":"section_navbar","settings":[{"type":"select","id":"position_setting","label":"Position","options":[{"value":"static","label":"Static"},{"value":"absolute","label":"Absolute"}],"default":"absolute"},{"type":"select","id":"color","label":"Background Color","options":[{"value":"yellow","label":"Yellow"},{"value":"green","label":"Green"}],"default":"green"}],"presets":[{"name":"header","category":"Liquify"}]} {% endschema %}
