@@ -17,11 +17,8 @@
     "collection_products": {
       "type": "collection_products",
       "settings": {
-      }
-    },
-    "collection_products_w9PJzQ": {
-      "type": "collection_products",
-      "settings": {
+        "collection_collection": "frontpage",
+        "collection_collection_limit": 6
       }
     }
   },
@@ -29,7 +26,6 @@
   "wrapper": "main.main-wrapper",
   "order": [
     "collection_hero",
-    "collection_products",
-    "collection_products_w9PJzQ"
+    "collection_products"
   ]
 }
