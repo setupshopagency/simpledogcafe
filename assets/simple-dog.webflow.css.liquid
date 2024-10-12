@@ -1804,7 +1804,7 @@ figcaption {
   background-image: url({{ 'img_awning-roof-top.png' | asset_url }});
   background-position: 50% 100%;
   background-repeat: no-repeat;
-  background-size: 1251px;
+  background-size: cover;
   border-bottom: 0 solid #fcf8f2;
   flex-flow: column;
   justify-content: flex-start;
@@ -4472,7 +4472,11 @@ figcaption {
 }
 
 .card_our-story.promo-section {
+  flex-flow: column;
+  justify-content: center;
+  align-items: stretch;
   padding: 0;
+  display: flex;
 }
 
 .our-story {
@@ -4492,7 +4496,7 @@ figcaption {
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
   grid-auto-columns: 1fr;
-  display: grid;
+  display: flex;
 }
 
 .h2_section-heading {
@@ -5420,7 +5424,7 @@ figcaption {
 }
 
 .img_free-shipping-promo {
-  pointer-events: none;
+  width: 100%;
 }
 
 .link-block {
@@ -5482,8 +5486,8 @@ figcaption {
 }
 
 .link_card_our-story {
-  position: absolute;
-  inset: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 1280px) {
@@ -7247,10 +7251,9 @@ figcaption {
   .our-story.global-padding-clyde {
     grid-column-gap: 1.5em;
     grid-row-gap: 1.5em;
-    grid-template-rows: auto;
+    grid-template-rows: auto auto;
     grid-template-columns: 1fr;
     grid-auto-columns: 1fr;
-    display: flex;
   }
 
   .h2_section-heading {
