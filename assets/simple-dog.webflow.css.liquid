@@ -1846,8 +1846,13 @@ figcaption {
 }
 
 .nav_menu.is-page-height-tablet {
+  background-image: linear-gradient(#ede8dd, #fff 30%);
+  border-radius: 1rem;
+  max-height: 50%;
+  margin-top: 18vh;
+  margin-right: 2rem;
   display: none;
-  position: relative;
+  position: fixed;
 }
 
 .nav_menu-dropdown {
@@ -1859,6 +1864,8 @@ figcaption {
 .nav_dropdown-toggle {
   align-items: center;
   padding: .5rem 2.5rem .5rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
   display: flex;
 }
 
@@ -1904,7 +1911,48 @@ figcaption {
 }
 
 .nav_menu-button {
+  margin-top: 4rem;
+  margin-right: 2.5rem;
   padding: 0;
+  position: absolute;
+  inset: 0% 0% 0% auto;
+}
+
+.nav_menu-button.w--open {
+  background-color: #c8c8c800;
+  position: absolute;
+}
+
+.menu-icon {
+  border: 2px solid var(--brand-yellow);
+  background-color: var(--brand-orage);
+  border-radius: 6rem;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  display: flex;
+}
+
+.menu-icon_line-top {
+  background-color: var(--base-color-neutral--white);
+  width: 24px;
+  height: 2px;
+}
+
+.menu-icon_line-middle {
+  background-color: var(--base-color-neutral--white);
+  width: 24px;
+  height: 2px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.menu-icon_line-bottom {
+  background-color: var(--base-color-neutral--white);
+  width: 24px;
+  height: 2px;
 }
 
 .nav_dropdown-link_child {
@@ -4302,7 +4350,7 @@ figcaption {
   background-image: linear-gradient(#fff, #fff);
   border-radius: 1rem;
   max-width: 29em;
-  padding: 1rem;
+  padding: 1em;
 }
 
 .u_align-center {
@@ -5022,8 +5070,8 @@ figcaption {
   border-radius: 2em;
   width: 100vw;
   max-width: 98vw;
-  margin: 4rem auto 1.5em;
-  padding-top: 12em;
+  margin: 8rem auto 1.5em;
+  padding-top: 10em;
   padding-bottom: 4em;
 }
 
@@ -5583,6 +5631,10 @@ figcaption {
     min-height: 50rem;
   }
 
+  .img_hero-dog-biting-a-jerkey {
+    max-width: 38em;
+  }
+
   .body {
     color: var(--texts);
   }
@@ -5594,6 +5646,10 @@ figcaption {
   .hero-content {
     padding-top: 10em;
     padding-bottom: 8em;
+  }
+
+  .img_usa-made-and-sourced.spin-anti-clockwise-no-mobile {
+    max-width: 15em;
   }
 
   .benefits-label {
@@ -6552,7 +6608,8 @@ figcaption {
   }
 
   .section_page-content {
-    padding-top: 10em;
+    margin-top: 6rem;
+    padding-top: 11em;
   }
 
   .h2_page-subheading {
@@ -6840,10 +6897,6 @@ figcaption {
   .nav_logo-link {
     padding-left: 0;
     bottom: -2.2em;
-  }
-
-  .nav_logo-link.w--current {
-    bottom: .1em;
   }
 
   .nav_menu.is-page-height-tablet {
@@ -7216,7 +7269,7 @@ figcaption {
 
   .img_logo {
     border-radius: .3rem;
-    max-width: 28em;
+    max-width: 32em;
   }
 
   .marquee.testimonial {
@@ -7394,7 +7447,7 @@ figcaption {
 
   .section_page-content {
     margin-top: 2.7rem;
-    padding-top: 14em;
+    padding-top: 18em;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -7477,6 +7530,11 @@ figcaption {
 
   .padding-global.padding-section-small.no-padding-on-mobile-portrait {
     padding: 0 0 2rem;
+  }
+
+  .padding-global.collections-page {
+    padding-left: .5rem;
+    padding-right: .5rem;
   }
 
   .text-size-tiny {
@@ -7663,18 +7721,12 @@ figcaption {
     background-image: url({{ 'img_awning-roof-top.png' | asset_url }});
     background-position: 50% 0;
     background-size: cover;
-    min-height: 4.7rem;
-    padding-bottom: 11em;
   }
 
   .nav_logo-link {
     top: 1.9em;
     bottom: auto;
     left: auto;
-  }
-
-  .nav_logo-link.w--current {
-    top: 5.3em;
   }
 
   .nav_menu.is-page-height-tablet {
@@ -7759,7 +7811,16 @@ figcaption {
   }
 
   .product_list.collections-page {
+    grid-column-gap: 8em;
+    grid-row-gap: 8em;
+    flex-flow: wrap;
     grid-template-columns: 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .spacer-xsmall {
@@ -8005,8 +8066,7 @@ figcaption {
   }
 
   .img_logo {
-    max-width: 48em;
-    padding: .25rem .55rem;
+    max-width: 47em;
     bottom: -4.6em;
   }
 
