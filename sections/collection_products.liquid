@@ -1,4 +1,4 @@
-<div class="padding-global"><div class="product_list-wrapper collections-page w-dyn-list"><div role="list" class="product_list collections-page w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
+<div class="padding-global collections-page"><div class="product_list-wrapper collections-page w-dyn-list"><div role="list" class="product_list collections-page w-dyn-items">{% for product in section.settings.collection_collection.products limit: section.settings.collection_collection_limit %}
 <div role="listitem" class="product_list-item collections-page w-dyn-item">
     
     {% render 'product_item', product: product %}
