@@ -13,6 +13,7 @@ document.addEventListener('alpine:init', () => {
          * All variants of the current product.
          */
         variants: pProduct?.variants,
+        initial_selected_or_first_available_variant: selectedOrFirstAvailable,
         selected_or_first_available_variant: selectedOrFirstAvailable,
         variantImage: selectedOrFirstAvailable?.featured_image?.src,
         selected_product_id: selectedOrFirstAvailable?.id,
@@ -27,7 +28,7 @@ document.addEventListener('alpine:init', () => {
 
         // Use init for debugging
         init() {
-            const productId = document.querySelector('#shopify-section-product_hero [li-element="product-variant-container"][data-productid]')?.getAttribute('data-productid');
+            const productId = document.querySelector('[li-element="product-variant-container"][data-productid]')?.getAttribute('data-productid');
             this.isMainProduct = parseInt(productId) === parseInt(pProduct.id);
         },
 
@@ -384,9 +385,9 @@ document.addEventListener('alpine:init', () => {
                     return nextAvailable[0]
                 }
 
-                console.log('Liquify - No next best option found')
+                console.log('Liquify - No next best option found, using initial first available variant')
 
-                return undefined
+                return this.initial_selected_or_first_available_variant
             }
 
             return matchedProducts[0]
