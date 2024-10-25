@@ -4,7 +4,30 @@
     Not in Stock    </div>
 {% endif %}{% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="product-item_tag is-red">
     Sale    </div>
-{% endif %}</div></div><div class="spacer-xsmall bg-white"></div><a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link-3 w-inline-block"><div class="h-line"></div><div class="product-item_center-2"><div class="div-block-14"><h4 li-object="product.metafields.custom.flavor" class="heading-style-h4 product-card-name">{{ product.metafields.custom.flavor }}</h4><h4 x-init="function customJerkyPosition() {     const elements = document.querySelectorAll('.product-card-label');          elements.forEach(element => {         const siblingNameElement = element.parentElement.querySelector('.heading-style-h4.product-card-name');                  if (siblingNameElement) {             element.style.position = 'absolute';                          if (siblingNameElement.textContent.includes('Beef')) {                 // console.log('Beef found in:', siblingNameElement.textContent);                 element.style.right = '28%';             } else if (siblingNameElement.textContent.includes('Turkey')) {                 // console.log('Turkey found in:', siblingNameElement.textContent);                 element.style.right = '17%';             } else {                 // console.log('Neither Beef nor Turkey found in:', siblingNameElement.textContent);                 element.style.right = '6%';             }         } else {             // console.warn('No sibling .heading-style-h4.product-card-name found for:', element);         }     }); }  // Call the function customJerkyPosition();" class="product-card-label shaddow">Jerky</h4></div></div><div class="h-line"></div><div class="product-item_price"><div class="text-size-regular price color">6oz</div><div class="v-line"></div>{% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="wrap_comparative-price">
+{% endif %}</div></div><div class="spacer-xsmall bg-white"></div><a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link-3 w-inline-block"><div class="h-line"></div><div class="product-item_center-2"><div class="div-block-14"><h4 li-object="product.metafields.custom.flavor" class="heading-style-h4 product-card-name">{{ product.metafields.custom.flavor }}</h4><h4 x-init="function customJerkyPosition() {     const elements = document.querySelectorAll('.product-card-label');          elements.forEach(element => {         const siblingNameElement = element.parentElement.querySelector('.heading-style-h4.product-card-name');                  if (siblingNameElement) {             element.style.position = 'absolute';                          if (siblingNameElement.textContent.includes('Beef')) {                 // console.log('Beef found in:', siblingNameElement.textContent);                 element.style.right = '28%';             } else if (siblingNameElement.textContent.includes('Turkey')) {                 // console.log('Turkey found in:', siblingNameElement.textContent);                 element.style.right = '17%';             } else {                 // console.log('Neither Beef nor Turkey found in:', siblingNameElement.textContent);                 element.style.right = '6%';             }         } else {             // console.warn('No sibling .heading-style-h4.product-card-name found for:', element);         }     }); }  // Call the function customJerkyPosition();" class="product-card-label shaddow">Jerky</h4></div><div class="w-embed w-script"><script>function customJerkyPosition() {
+    const elements = document.querySelectorAll('.product-card-label');
+    elements.forEach(element => {
+        const siblingNameElement = element.parentElement.querySelector('.heading-style-h4.product-card-name');
+        if (siblingNameElement) {
+            element.style.position = 'absolute';
+            if (siblingNameElement.textContent.includes('Beef')) {
+                console.log('code embed Beef found in:', siblingNameElement.textContent);
+                element.style.right = '28%';
+            } else if (siblingNameElement.textContent.includes('Turkey')) {
+                console.log('code embed Turkey found in:', siblingNameElement.textContent);
+                element.style.right = '17%';
+            } else {
+                console.log('code embed Neither Beef nor Turkey found in:', siblingNameElement.textContent);
+                element.style.right = '6%';
+            }
+        } else {
+            console.warn('No sibling .heading-style-h4.product-card-name found for:', element);
+        }
+    });
+}
+// Call the function
+customJerkyPosition();
+</script></div></div><div class="h-line"></div><div class="product-item_price"><div class="text-size-regular price color">6oz</div><div class="v-line"></div>{% if product.compare_at_price_max > product.price %}    <div li-if="product.compare_at_price_max > product.price" class="wrap_comparative-price">
     <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-style-muted price preview-hide-elements-undo-and-delete">{{ product.compare_at_price | money }}</div>    </div>
 {% endif %}<div li-object="product.price | money" class="text-size-regular price">{{ product.price | money }}</div></div><div class="h-line"></div></a>{% form 'product', product %}
 {% if product.has_only_default_variant != true %}    <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
