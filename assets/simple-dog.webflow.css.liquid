@@ -638,6 +638,7 @@ figcaption {
   font-size: 5em;
   font-weight: 400;
   line-height: 1;
+  position: relative;
 }
 
 .heading-style-h4.text-weight-normal {
@@ -4584,7 +4585,7 @@ figcaption {
 
 .h2_section-heading.join-the-club {
   color: var(--pork);
-  font-size: 7em;
+  font-size: 4.8em;
 }
 
 .txt_paragraph {
@@ -4598,6 +4599,7 @@ figcaption {
 
 .txt_paragraph.our-story {
   max-width: 21em;
+  margin-bottom: 1rem;
 }
 
 .txt_paragraph.join-the-club {
@@ -4729,6 +4731,7 @@ figcaption {
   padding-left: 2.5em;
   padding-right: 2.5em;
   display: flex;
+  position: relative;
 }
 
 .txt_join-the-club-heading {
@@ -5545,12 +5548,15 @@ figcaption {
 }
 
 .product-card-label {
-  text-shadow: 1px 1px #fff;
   font-family: Quirk Chick, sans-serif;
   font-size: 2.7rem;
   font-weight: 400;
   position: absolute;
   inset: auto 6% -.2em auto;
+}
+
+.product-card-label.shaddow {
+  text-shadow: 2px -2px #fff, -2px -2px #fff;
 }
 
 .div-block-14 {
@@ -5561,6 +5567,25 @@ figcaption {
 .link_card_our-story {
   width: 100%;
   height: 100%;
+}
+
+.link_instagram {
+  color: var(--pork);
+}
+
+.link_instagram:hover {
+  text-decoration: underline;
+}
+
+.span-highlight {
+  color: var(--pork);
+}
+
+.img_camera-flash {
+  width: 4.3em;
+  position: absolute;
+  inset: 2% 2% auto auto;
+  transform: rotate(30deg);
 }
 
 @media screen and (min-width: 1280px) {
@@ -5603,6 +5628,10 @@ figcaption {
 
   .container-footer {
     padding-bottom: 10rem;
+  }
+
+  .img_camera-flash {
+    transform: rotate(31deg);
   }
 }
 
@@ -5658,6 +5687,11 @@ figcaption {
 
   .ig-post {
     width: 24em;
+  }
+
+  .link_instagram {
+    color: var(--pork);
+    cursor: pointer;
   }
 }
 
