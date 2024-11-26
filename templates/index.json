@@ -1,23 +1,21 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero_sdc": {
       "type": "hero_sdc",
-      "settings": {
-      }
+      "settings": {}
     },
     "benefits": {
       "type": "benefits",
-      "settings": {
-      }
+      "settings": {}
     },
     "category": {
       "type": "category",
@@ -28,24 +26,35 @@
     },
     "our_story": {
       "type": "our_story",
-      "settings": {
-      }
+      "settings": {}
     },
     "testimonials": {
       "type": "testimonials",
-      "settings": {
-      }
+      "settings": {}
     },
     "social_media": {
       "type": "social_media",
-      "settings": {
-      }
+      "settings": {}
     },
     "instafeed": {
       "type": "instafeed",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
+    },
+    "173259877191215e5c": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_featured_carousel_fWHbAB": {
+          "type": "shopify://apps/judge-me-reviews/blocks/featured_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "maxwidth": 1280
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_featured_carousel_fWHbAB"
+      ],
+      "settings": {}
     }
   },
   "layout": "theme",
@@ -57,6 +66,7 @@
     "our_story",
     "testimonials",
     "social_media",
+    "173259877191215e5c",
     "instafeed"
   ]
 }
