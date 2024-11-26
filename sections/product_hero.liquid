@@ -68,4 +68,13 @@
 
                             
                         </li>
-{% endfor %}</ul></div></div></div></section> {% schema %} {"tag":"section","name":"Product-Hero","class":"section_page-content","settings":[{"id":"text_headline","type":"text","label":"Headline","default":"Recommended"}],"presets":[{"name":"Product-Hero","category":"Liquify"}]} {% endschema %}
+{% endfor %}</ul></div></div></div></section>
+<div class="container-large">
+<!-- Start of Judge.me code -->
+      <div style='clear:both'></div>
+      <div id='judgeme_product_reviews' class='jdgm-widget jdgm-review-widget' data-product-title='{{ product.title | escape }}' data-id='{{ product.id }}' data-auto-install='false'>
+        {{ product.metafields.judgeme.widget }}
+      </div>
+      <!-- End of Judge.me code -->
+  </div>
+{% schema %} {"tag":"section","name":"Product-Hero","class":"section_page-content","settings":[{"id":"text_headline","type":"text","label":"Headline","default":"Recommended"}],"presets":[{"name":"Product-Hero","category":"Liquify"}]} {% endschema %}
