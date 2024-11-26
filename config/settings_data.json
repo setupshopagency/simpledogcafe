@@ -14,9 +14,7 @@
     "sections": {
       "header": {
         "type": "header",
-        "custom_css": [
-
-        ],
+        "custom_css": [],
         "settings": {
           "position_setting": "static",
           "color": "yellow"
@@ -24,39 +22,28 @@
       },
       "login": {
         "type": "login",
-        "settings": {
-        }
+        "settings": {}
       },
       "footer": {
         "type": "footer",
-        "settings": {
-        }
+        "settings": {}
       },
       "account_hero": {
         "type": "account_hero",
-        "custom_css": [
-
-        ],
-        "settings": {
-        }
+        "custom_css": [],
+        "settings": {}
       },
       "account_orders": {
         "type": "account_orders",
-        "custom_css": [
-
-        ],
-        "settings": {
-        }
+        "custom_css": [],
+        "settings": {}
       },
       "account_addresses": {
         "type": "account_addresses",
-        "settings": {
-        }
+        "settings": {}
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "12046557757412368804": {
         "type": "shopify://apps/accounts-concierge/blocks/customer_account_page/3c495b68-652c-468d-a0ef-5bad6935d104",
@@ -78,14 +65,12 @@
       "8409675092115237846": {
         "type": "shopify://apps/accounts-concierge/blocks/custom_forms/3c495b68-652c-468d-a0ef-5bad6935d104",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "11356494674496455976": {
         "type": "shopify://apps/accounts-concierge/blocks/loyalty/3c495b68-652c-468d-a0ef-5bad6935d104",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "6471712195879653093": {
         "type": "shopify://apps/accounts-concierge/blocks/social_logins/3c495b68-652c-468d-a0ef-5bad6935d104",
@@ -130,6 +115,11 @@
           "remove_button_text_color": "#ffffff",
           "custom_css": ""
         }
+      },
+      "14060646107696862457": {
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {}
       }
     }
   }
