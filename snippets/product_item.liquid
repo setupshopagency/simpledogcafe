@@ -31,7 +31,7 @@ customJerkyPosition();
     <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-style-muted price preview-hide-elements-undo-and-delete">{{ product.compare_at_price | money }}</div>    </div>
 {% endif %}<div li-object="product.price | money" class="text-size-regular price">{{ product.price | money }}</div></div>
   <!-- Start of Judge.me code -->
-      <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+      <div style='{{ jm_style }} text-align: center' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
         {{ product.metafields.judgeme.badge }}
       </div>
       <!-- End of Judge.me code --><div class="h-line"></div></a>{% form 'product', product %}
