@@ -60,6 +60,173 @@
                   }
               });
           }
+          customJerkyPosition();
+        </script>
+      </div>
+    </div>
+    <div class="h-line"></div>
+    <div class="product-item_price">
+      <!-- Updated conditional for 6oz vs 24oz -->
+      <div class="text-size-regular price color">
+        {% if product.title contains 'Variety' or product.title contains '4 Chicken' %}
+          24oz
+        {% else %}
+          6oz
+        {% endif %}
+      </div>
+      <div class="v-line"></div>
+      {% if product.compare_at_price_max > product.price %}
+        <div li-if="product.compare_at_price_max > product.price" class="wrap_comparative-price">
+          <div li-object="product.compare_at_price | money" class="text-size-regular text-style-strikethrough text-style-muted price preview-hide-elements-undo-and-delete">
+            {{ product.compare_at_price | money }}
+          </div>
+        </div>
+      {% endif %}
+      <div li-object="product.price | money" class="text-size-regular price">
+        {{ product.price | money }}
+      </div>
+    </div>
+    <!-- Start of Judge.me code -->
+    <div style='{{ jm_style }} margin: 0 auto;' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+      {{ product.metafields.judgeme.badge }}
+    </div>
+    <!-- End of Judge.me code -->
+    <div class="h-line"></div>
+  </a>
+
+  <!-- Free Shipping Banner -->
+  <div class="free-shipping-message" style="font-size:14px; text-align:center; margin:10px 0;">
+    Free Shipping with any purchase
+  </div>
+
+  {% form 'product', product %}
+    {% if product.has_only_default_variant != true %}
+      <div li-if="product.has_only_default_variant != true" class="product-header_option-list">
+        <template x-for="(option, optionKey) in product.options" :key="optionKey">
+          <div li-element="product-options-loop" class="product-header_option" data-productvariantsloop="true">
+            <div li-element="product-options-name" class="txt_variant" x-text="option">Variant</div>
+            <div class="product-header_radio-list">
+              <template x-for="(variantName, variantKey) in options_by_name[option].option.values" :key="variantName">
+                <label li-element="product-option-loop" class="product-header_radio w-radio">
+                  <div class="w-form-formradioinput w-form-formradioinput--inputType-custom product-header_radio-button w-radio-input"></div>
+                  <input type="radio" 
+                         li-element="product-option-input" 
+                         style="opacity:0;position:absolute;z-index:-1" 
+                         x-on:click="setVariant" 
+                         :name="option" 
+                         :data-name="option" 
+                         :value="variantName" 
+                         :id="variantName.toString().normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/\s+/g, '-').replace(/[^\w-]+/g, '').replace(/--+/g, '-')" 
+                         :checked="selected_or_first_available_variant?.options.includes(variantName)" 
+                         data-selectortype="radio" 
+                         :class="firstOptionHasAvailableChildren[variantName] ? '' : 'data-disabled'">
+                  <span li-element="product-option-name" class="text-size-regular text-weight-semibold w-form-label" 
+                        for="radio-2" 
+                        x-text="variantName" 
+                        :for="variantName">
+                    XS
+                  </span>
+                </label>
+              </template>
+            </div>
+          </div>
+        </template>
+      </div>
+    {% endif %}
+  {% endform %}
+
+  <div class="margin-top-auto">
+    <div class="product-item_form-wrapper">
+      {% if product.available == true %}
+        <div li-if="product.available == true" class="wrap_add-to-cart">
+          <div class="cta_dynamic-button-color" style="background-color:{{product.metafields.custom.product_color}}">
+            <a li-element="add-to-cart" 
+               href="#" 
+               class="button max-width-full w-button" 
+               @click="addToCart(true)" 
+               :disabled="!addToCartButton">
+              Add to Cart
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% if product.available != true %}
+        <div li-if="product.available != true" class="wrap_not-in-stock preview-hide-elements-undo-and-delete">
+          <a href="#" class="button is-secondary pointer-events-off max-width-full w-button">
+            Not in Stock
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="img_white-card"></div>
+<div class="shadow" style="background-color:{{product.metafields.custom.product_color}}"></div>
+
+{% comment %}
+<script src="{{ 'liquify_custom.js' | asset_url }}" type="text/javascript"></script>
+<div li-element="product-variant-container" class="product-item_component" 
+     x-data="handleVariant({{ product | json | escape }}, {{ product.options_by_name | json | escape }}, {{ product.selected_or_first_available_variant | json | escape }})" 
+     x-init="$nextTick(() => { activateVariants() })" 
+     data-productid="{{ product.id }}" 
+     @setbundleitem.window="updateBundleItem($event.detail.product, $event.detail.quantity)">
+
+  <div class="product-item_image-link">
+    <a li-object:href="product.url" href="{{ product.url }}" class="product-item_image-wrapper w-inline-block">
+      <img li-object:src="product.featured_image | img_url: 'master'" 
+           loading="eager" 
+           width="204" 
+           src="{{ product.featured_image | img_url: 'master' }}" 
+           alt="{{ product.featured_image.alt }}" 
+           li-object:alt="product.featured_image.alt" 
+           class="product-item_image">
+    </a>
+    <div class="product-item_tag_list preview-hide-elements-undo-and-delete">
+      {% if product.selected_or_first_available_variant.available != true %}
+        <div li-if="product.selected_or_first_available_variant.available != true" class="product-item_tag">
+          Not in Stock
+        </div>
+      {% endif %}
+      {% if product.compare_at_price_max > product.price %}
+        <div li-if="product.compare_at_price_max > product.price" class="product-item_tag is-red">
+          Sale
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="spacer-xsmall bg-white"></div>
+
+  <a li-object:href="product.url" href="{{ product.url }}" class="product-item_text-link-3 w-inline-block">
+    <div class="h-line"></div>
+    <div class="product-item_center-2">
+      <div class="div-block-14">
+        <h4 li-object="product.metafields.custom.flavor" class="heading-style-h4 product-card-name">
+          {{ product.metafields.custom.flavor }}
+        </h4>
+        <h4 class="product-card-label shaddow">Jerky</h4>
+      </div>
+      <div class="code-embed-2 w-embed w-script">
+        <script>
+          function customJerkyPosition() {
+              const elements = document.querySelectorAll('.product-card-label');
+              elements.forEach(element => {
+                  const siblingNameElement = element.parentElement.querySelector('.heading-style-h4.product-card-name');
+                  if (siblingNameElement) {
+                      element.style.position = 'absolute';
+                      if (siblingNameElement.textContent.includes('Beef')) {
+                          element.style.right = '28%';
+                      } else if (siblingNameElement.textContent.includes('Turkey')) {
+                          element.style.right = '17%';
+                      } else {
+                          element.style.right = '7%';
+                      }
+                  } else {
+                      console.warn('No sibling .heading-style-h4.product-card-name found for:', element);
+                  }
+              });
+          }
           // Call the function
           customJerkyPosition();
         </script>
@@ -157,3 +324,4 @@
 
 <div class="img_white-card"></div>
 <div class="shadow" style="background-color:{{product.metafields.custom.product_color}}"></div>
+{% endcomment %}
