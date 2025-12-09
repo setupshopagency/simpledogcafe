@@ -37,7 +37,7 @@
             },
             _abortController : null,
             initAbortController() {
-                if(this._abortController) {
+                if (this._abortController) {
                     this._abortController.abort('abort previous request');
                 }
                 this._abortController = new AbortController()
@@ -87,7 +87,7 @@
                 this.initAbortController();
                 console.log('updateCartItemQuantity(): id, quantity: ', id, quantity);
                 this.products.filter((product)  => {
-                    if(parseInt(product.id) === parseInt(id)) {
+                    if (parseInt(product.id) === parseInt(id)) {
                         product.quantity = quantity
                     }
                 })
@@ -100,17 +100,17 @@
                         quantity: quantity,
                     }),
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        this.resetAbortController();
-                        console.log('updateCartItemQuantity(): ', data);
-                        this.$dispatch('cartupdated');
-                        this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
-                    });
+                .then(response => response.json())
+                .then(data => {
+                    this.resetAbortController();
+                    console.log('updateCartItemQuantity(): ', data);
+                    this.$dispatch('cartupdated');
+                    this.$dispatch('showcartmessage', { status: data.status, message: data.message, description: data.description });
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    this.$dispatch('showcartmessage', { status: error?.status, message: error, description: error });
+                });
             },
             moneyFormat(value, minor = true) {
                 return LiquifyHelper.moneyFormat(value, minor)
@@ -120,7 +120,7 @@
             },
             showCartMessage(event) {
                 console.log("dispatched showCartMessage", event)
-                if(event?.detail?.status) {
+                if (event?.detail?.status) {
                     this.cartApiResponse.result = event.detail ?? this.cartApiResponseDefault.result;
                     this.cartApiResponse.show = true
                     setTimeout(() =>  this.cartApiResponse =  this.cartApiResponseDefault, this.cartApiResponse.timeout ?? 5000)
@@ -132,7 +132,7 @@
 
 <div data-hover="false"
      data-delay="0"
-     x-transition=""
+     x-transition
      li-element="mini-cart"
      class="nav_dropdown w-dropdown"
      x-cloak
@@ -182,38 +182,39 @@
             </div>
           </div>
 
-<!-- Free Shipping Progress: unlock at $81+ (≈ 4 bags) -->
-<div class="free-shipping">
-  <div class="progress-box">
-    <div class="progress"
-         x-bind:style="{
-           width: (
-             total.price >= 8100
-               ? 100
-               : (total.price <= 0 ? 0 : Math.round((total.price / 8100) * 100))
-           ) + '%',
-           transition: 'width 0.5s ease-in-out'
-         }"></div>
-  </div>
+          <!-- Free Shipping Progress: unlock at $81+ (≈ 4 bags) -->
+          <div class="free-shipping">
+            <div class="progress-box">
+              <div class="progress"
+                   x-bind:style="{
+                     width: (
+                       total.price >= 8100
+                         ? 100
+                         : (total.price <= 0 ? 0 : Math.round((total.price / 8100) * 100))
+                     ) + '%',
+                     transition: 'width 0.5s ease-in-out'
+                   }"></div>
+            </div>
 
-  <!-- Messages -->
-  <div x-show="total.price == 0"
-       class="free-shipping-message text-size-tiny">
-    Get FREE SHIPPING with any 4+ bag jerky order (or $81+ cart)!
-  </div>
+            <!-- Messages -->
+            <div x-show="total.price == 0"
+                 class="free-shipping-message text-size-tiny">
+              Get FREE SHIPPING with any 4+ bag jerky order (or $81+ cart)!
+            </div>
 
-  <div x-show="total.price > 0 && total.price < 8100"
-       class="free-shipping-message text-size-tiny">
-    Spend
-    <span x-text="moneyFormat(8100 - total.price, true, '${{amount}}')"></span>
-    more to get FREE SHIPPING!
-  </div>
+            <div x-show="total.price > 0 && total.price < 8100"
+                 class="free-shipping-message text-size-tiny">
+              Spend
+              <span x-text="moneyFormat(8100 - total.price, true, '${{amount}}')"></span>
+              more to get FREE SHIPPING!
+            </div>
 
-  <div x-show="total.price >= 8100"
-       class="free-shipping-message text-size-tiny">
-    You've unlocked FREE SHIPPING 🎉
-  </div>
-</div>
+            <div x-show="total.price >= 8100"
+                 class="free-shipping-message text-size-tiny">
+              You've unlocked FREE SHIPPING 🎉
+            </div>
+          </div>
+        </div>
 
         <div x-show="total.items == 0" class="text-size-regular">
           No Products selected
