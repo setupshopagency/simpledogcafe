@@ -182,38 +182,38 @@
             </div>
           </div>
 
-          <!-- Free Shipping Progress: unlock at 4+ bags -->
-          <div class="free-shipping">
-            <div class="progress-box">
-              <div class="progress"
-                   x-bind:style="{
-                     width: (
-                       total.items >= 4
-                         ? 100
-                         : (total.items <= 0 ? 0 : Math.round((total.items / 4) * 100))
-                     ) + '%',
-                     transition: 'width 0.5s ease-in-out'
-                   }"></div>
-            </div>
+<!-- Free Shipping Progress: unlock at $81+ (≈ 4 bags) -->
+<div class="free-shipping">
+  <div class="progress-box">
+    <div class="progress"
+         x-bind:style="{
+           width: (
+             total.price >= 8100
+               ? 100
+               : (total.price <= 0 ? 0 : Math.round((total.price / 8100) * 100))
+           ) + '%',
+           transition: 'width 0.5s ease-in-out'
+         }"></div>
+  </div>
 
-            <!-- Messages -->
-            <div x-show="total.items == 0"
-                 class="free-shipping-message text-size-tiny">
-              Get FREE SHIPPING with any 4+ bag jerky order!
-            </div>
+  <!-- Messages -->
+  <div x-show="total.price == 0"
+       class="free-shipping-message text-size-tiny">
+    Get FREE SHIPPING with any 4+ bag jerky order (or $81+ cart)!
+  </div>
 
-            <div x-show="total.items > 0 && total.items < 4"
-                 class="free-shipping-message text-size-tiny">
-              Add <span x-text="4 - total.items"></span>
-              more bag<span x-show="4 - total.items > 1">s</span> to get FREE SHIPPING!
-            </div>
+  <div x-show="total.price > 0 && total.price < 8100"
+       class="free-shipping-message text-size-tiny">
+    Spend
+    <span x-text="moneyFormat(8100 - total.price, true, '${{amount}}')"></span>
+    more to get FREE SHIPPING!
+  </div>
 
-            <div x-show="total.items >= 4"
-                 class="free-shipping-message text-size-tiny">
-              You've unlocked FREE SHIPPING 🎉
-            </div>
-          </div>
-        </div>
+  <div x-show="total.price >= 8100"
+       class="free-shipping-message text-size-tiny">
+    You've unlocked FREE SHIPPING 🎉
+  </div>
+</div>
 
         <div x-show="total.items == 0" class="text-size-regular">
           No Products selected
