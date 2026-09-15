@@ -48,7 +48,7 @@
              "url":"{{ shop.url }}",
              "mainEntity":{"@type":"offerCatalog",
              "name":{{ collection.title }},
-             "url":{{ {{ collection.title | link_to: collection.url }} }},
+             "url":{{ nil | link_to: collection.url }} }},
              "numberOfItems":{{ collection.products.size }}}
       }
     </script><script src="{{ '_helper.js' | asset_url }}" type="text/javascript"></script>{{ content_for_header }}</head>
@@ -78,4 +78,13 @@
   });
 </script>
 </body>
-</html>
+</html>{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{{ {{ collection.title | link_to: collection.url }}"
+  to: "{{ nil | link_to: collection.url }}"
+  position: 3228..3263
+{%- endcomment -%}
