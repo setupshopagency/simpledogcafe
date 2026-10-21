@@ -182,38 +182,15 @@
             </div>
           </div>
 
-          <!-- Free Shipping Progress: unlock at $81+ (≈ 4 bags) -->
-          <div class="free-shipping">
-            <div class="progress-box">
-              <div class="progress"
-                   x-bind:style="{
-                     width: (
-                       total.price >= 8100
-                         ? 100
-                         : (total.price <= 0 ? 0 : Math.round((total.price / 8100) * 100))
-                     ) + '%',
-                     transition: 'width 0.5s ease-in-out'
-                   }"></div>
-            </div>
-
-            <!-- Messages -->
-            <div x-show="total.price == 0"
-                 class="free-shipping-message text-size-tiny">
-              Get FREE SHIPPING with any 4+ bag jerky order (or $81+ cart)!
-            </div>
-
-            <div x-show="total.price > 0 && total.price < 8100"
-                 class="free-shipping-message text-size-tiny">
-              Spend
-              <span x-text="moneyFormat(8100 - total.price, true, '${{amount}}')"></span>
-              more to get FREE SHIPPING!
-            </div>
-
-            <div x-show="total.price >= 8100"
-                 class="free-shipping-message text-size-tiny">
-              You've unlocked FREE SHIPPING 🎉
-            </div>
-          </div>
+          <!-- Free Shipping Progress: four bags, including bundle contents -->
+<div class="free-shipping" x-data="{ get bags() { return products.reduce((n, p) => n + Number(p.quantity || 0) * (p.handle === '4-bag-variety-box' || (p.url || '').split('?')[0].endsWith('/products/4-bag-variety-box') || (p.product_title || p.title || '').startsWith('4 Bag Bundle Box') ? 4 : 1), 0) } }">
+  <div class="progress-box">
+    <div class="progress" x-bind:style="{ width: Math.min(100, bags * 25) + '%', transition: 'width 0.5s ease-in-out' }"></div>
+  </div>
+  <div x-show="bags == 0" class="free-shipping-message text-size-tiny">Get FREE SHIPPING with any 4+ bag jerky order!</div>
+  <div x-show="bags > 0 &amp;&amp; bags &lt; 4" class="free-shipping-message text-size-tiny">Add <span x-text="4 - bags"></span> more <span x-text="4 - bags === 1 ? 'bag' : 'bags'"></span> to get FREE SHIPPING!</div>
+  <div x-show="bags >= 4" class="free-shipping-message text-size-tiny">You've unlocked FREE SHIPPING 🎉</div>
+</div>
         </div>
 
         <div x-show="total.items == 0" class="text-size-regular">
