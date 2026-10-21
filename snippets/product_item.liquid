@@ -69,7 +69,7 @@
     <div class="product-item_price">
       <!-- Updated conditional for 6oz vs 24oz -->
       <div class="text-size-regular price color">
-        {% if product.title contains 'Variety' or product.title contains '4 Chicken' %}
+        {% if product.handle == '4-bag-variety-box' or product.title contains 'Variety' or product.title contains '4 Chicken' %}
           24oz
         {% else %}
           6oz
